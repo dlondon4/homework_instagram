@@ -13,4 +13,13 @@ class PhotosController < ApplicationController
 
   end
 
+  def create_row
+    @new_caption = params[:the_caption]
+    @new_photo = params[:the_source]
+    @np = Photo.new
+    @np.source = @new_photo
+    @np.caption = @new_caption
+    @np.save
+  end
+
 end
