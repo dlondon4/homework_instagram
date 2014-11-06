@@ -22,4 +22,11 @@ class PhotosController < ApplicationController
     @np.save
   end
 
+  def destroy
+    @list_of_photos = Photo.all
+    @photo_id = params[:id]
+    @p = @list_of_photos.find(@photo_id)
+    @p.destroy
+  end
+
 end
